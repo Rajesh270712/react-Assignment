@@ -22,7 +22,6 @@ let data =[
 
             function updateTask(){
 
-                console.log(query)
                 let payload={
                     title:query,
                     status:false
@@ -30,6 +29,7 @@ let data =[
                 data.push(payload);
                 let newTask=[[...task,payload]]
                 addTask(newTask)
+                console.log(data)
 
             }
 

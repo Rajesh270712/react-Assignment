@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import {MoreDetails,ToggleDetails} from "./moreDetails";
+import MoreDetails from "./moreDetails";
 
 
 

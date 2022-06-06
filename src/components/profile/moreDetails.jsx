@@ -1,32 +1,28 @@
 import React from "react";
 
-let toggle= true;
-const ToggleDetails = () =>{
-    if(toggle){
-        toggle=false
-        document.querySelector(".hide").style.display="none"
-    }
-    else
-    {
-        toggle=true
-        document.querySelector(".hide").style.display="block"
-    }
-    // (toggle) ? toggle=false  document.querySelector(".hide").style.display="none" : toggle=true ;
+
     
     
-    console.log(toggle);
-}
+    
+    
+    let MoreDetails= () =>{
+    const displayHide= "none" 
+    const displayShow= "block" 
+    const [display, setDisplay] =React.useState(displayHide)
 
-let flag="block";
-
-
-let MoreDetails= () =>{
+    function displayToggle(){
+         (display===displayHide) ?  setDisplay(displayShow) : setDisplay(displayHide)
+        
+        
+    }
     return (
         <>
-        {/* <button onClick={ToggleDetails} > Show More Details </button> */}
-        <button onClick={ToggleDetails} > Show More Details </button>
+       
+
+
+        <button onClick={displayToggle} >  {(display===displayHide ? `Show` : `Hide`) }  More Details </button>
       
-        <div className="hide" style={toggle===false ? {display:"none"} : {display:"block"} }>
+        <div style={{display:display}} >
             <h2>Location : Nasik</h2>
             <h2>Organization : Masai School</h2>
         </div>
@@ -36,4 +32,4 @@ let MoreDetails= () =>{
     )
 }
 
-export  {MoreDetails,ToggleDetails};
+export  default MoreDetails
